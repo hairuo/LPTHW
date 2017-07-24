@@ -59,7 +59,7 @@ def convert(snippet, phrase):
 
     for sentence in snippet, phrase:
         result = sentence[:]
-        # CSQ: "slice" syntax of copying a list from 1st to last element
+        # CSQ: "slice" syntax of copying a list from 1st to last element, See P148.
         # next 3 for loops insert elements from _names lists into result sentence
 
         # fake class names
