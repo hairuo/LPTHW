@@ -97,11 +97,11 @@ class LaserWeaponArmory(Scene):
         print "and you need the code to get the bomb out. If you get the code"
         print "wrong 10 times then the lock closes forever and you can't "
         print "get the bomb. The code is 3 digits."
-        code = "%d%d%d" % (randint(1, 9), randint(1,9), randint(1,9))
+        code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
         guess = raw_input("[keypad]> ")
         guesses = 0
 
-        while guesses != code and guesses < 10:
+        while guess != code and guesses < 10: #Error: guesses != code
             print "BZZZZEDDD!"
             guesses += 1
             guess = raw_input("[keypad]> ")
@@ -170,7 +170,7 @@ class EscapePod(Scene):
         print "but you don't have time to look. There's 5 pods, which one"
         print "do you take?"
 
-        good_pod = randint(1, 5)
+        good_pod = randint(1,5)
         guess = raw_input("[pod #]> ")
 
 
@@ -214,7 +214,7 @@ class Map(object):
         return Map.scenes.get(scene_name)
 
     def opening_scene(self):
-        return self.next_scene(self, start_scene)
+        return self.next_scene(self.start_scene) #Error: (self, start_scene)
 
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
