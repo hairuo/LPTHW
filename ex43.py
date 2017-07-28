@@ -212,7 +212,8 @@ class Map(object):
 
     def next_scene(self, scene_name):
         return Map.scenes.get(scene_name)
-
+        # The method get() returns a value for the given key.
+        # If key is not available then returns default value None.
     def opening_scene(self):
         return self.next_scene(self.start_scene) #Error: (self, start_scene)
 
