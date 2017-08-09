@@ -48,13 +48,13 @@ def parse_verb(word_list):
         raise ParserError("Expected a verb next.")
 
 
+def parse_number(word_list):
+    skip(word_list, 'stop')
 
-
-
-
-
-
-
+    if peek(word_list) == 'number':
+        return match(word_list, 'number')
+    else:
+        return ('number', 1)
 
 # sentence instead of word as above:
 def parse_object(word_list):
@@ -63,7 +63,7 @@ def parse_object(word_list):
 
     if next == 'noun':
         return match(word_list, 'noun')
-    if next == 'direction':
+    elif next == 'direction':
         return match(word_list, 'direction')
     else:
         raise ParserError("Expected a noun or direction next.")
