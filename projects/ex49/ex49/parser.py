@@ -47,7 +47,7 @@ def parse_verb(word_list):
     else:
         raise ParserError("Expected a verb next.")
 
-
+# parse_number is lack in the textbook, which is copied from github.
 def parse_number(word_list):
     skip(word_list, 'stop')
 
